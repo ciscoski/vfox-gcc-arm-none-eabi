@@ -1,15 +1,35 @@
-# vfox-plugin-template
+# vfox-gcc-arm-none-eabi
 
-This is a [vfox plugin](https://vfox.lhan.me/plugins/create/howto.html) template with CI that package and publish the plugin.
+[GNU Arm Embedded Toolchain plugin](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads) for [vfox](https://vfox.lhan.me/).
 
-## Usage
+## Install
 
-1. [Generate](https://github.com/version-fox/vfox-plugin-template/generate) a new repository based on this template.
-2. Configure [metadata](https://github.com/version-fox/vfox-plugin-template/blob/main/metadata.lua) information
-3. To develop your plugin further, please read [the plugins create section of the docs](https://vfox.lhan.me/plugins/create/howto.html).
+After installing vfox, install the plugin by running
+
+``` shell
+vfox add gcc-arm-none-eabi
+```
+
+Next, search and select the version to install.
+By default, vfox keeps cache for available versions, use the `--no-cache` flag to delete the cache file.
 
 
-## How to publish?
+``` shell
+vfox search gcc-arm-none-eabi
+vfox search gcc-arm-none-eabi --no-cache && vfox search gcc-arm-none-eab
+```
 
-1. Push a new tag to the repository which name is `vX.Y.Z` (X.Y.Z is the version number).
-2. The CI will automatically package, then publish [release](https://github.com/version-fox/vfox-plugin-template/releases/tag/v0.0.1) and publish [manifest](https://github.com/version-fox/vfox-plugin-template/releases/tag/manifest).
+
+Install the latest stable version with `latest` tag.
+
+``` shell
+vfox install cc-arm-none-eabi@latest
+```
+
+## Architecture selection
+
+This plugin exposes allows to select the SDK architecture.
+The user can select the atchitecture by adding a "~<arch>" at the end of the version.
+`amd64`,`i386` and `arm64` are valid architectures.
+
+By default the plugin will select the best architecture for the host.
