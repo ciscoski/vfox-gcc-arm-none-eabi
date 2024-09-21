@@ -4,7 +4,7 @@ local http = require("http")
 local versions = {}
 
 local resp, err = http.get({
-  url = "https://raw.githubusercontent.com/ciscoski/gcc-arm-none-eabi-dist/refs/heads/main/gcc-arm-none-eabi.json"
+  url = "https://github.com/ciscoski/gcc-arm-none-eabi-dist/releases/latest/download/gcc-arm-none-eabi.json"
 })
 
 if err ~= nil or resp.status_code ~= 200 then
