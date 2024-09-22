@@ -10,16 +10,6 @@ After installing vfox, install the plugin by running
 vfox add gcc-arm-none-eabi
 ```
 
-Next, search and select the version to install.
-By default, vfox keeps cache for available versions, use the `--no-cache` flag to delete the cache file.
-
-
-``` shell
-vfox search gcc-arm-none-eabi
-vfox search gcc-arm-none-eabi --no-cache && vfox search gcc-arm-none-eab
-```
-
-
 Install the latest stable version with `latest` tag.
 
 ``` shell
